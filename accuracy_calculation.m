@@ -1,6 +1,6 @@
 load('theta_values');
 load('final_input');
-load('output');
+load('output.mat');
 X = [ones(size(X,1),1) X(:,1:(end-1))];
 h_x = sigmoid(X*theta);
 for i = 1:size(h_x,1)

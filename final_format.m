@@ -1,10 +1,16 @@
-load('test_data_final');
+load('input.mat');
+X_1 = X;
 m = length(X_1);
-X = zeros(m,79);
+X = zeros(m,105);
 for i = 1:m
-  for j = 0:2
-    X(i,26*j + X_1(i,j+1)) = 1;
+  for j = 0:3
+    temp = X_1(i,j+1);
+    if temp < 0
+      continue;
+    end
+    
+    X(i,26*j + temp) = 1;
   end
-  X(i,79) = X_1(i,4);
+  X(i,105) = X_1(i,5);
 end
 
